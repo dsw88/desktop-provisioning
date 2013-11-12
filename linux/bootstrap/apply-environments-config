@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Place bashrc
+cp ../config/bashrc ~/.bashrc
+
+# Place vimrc
+cp ../config/vimrc ~/.vimrc
+

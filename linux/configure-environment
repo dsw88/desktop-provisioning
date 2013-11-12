@@ -1,0 +1,25 @@
+#!/bin/bash
+
+export PATH=".:$PATH"
+
+# Install and update necessary Debian packages
+bootstrap/update-os-packages
+bootstrap/install-packages
+bootstrap/update-os-packages
+
+# Set up RVM and Ruby stuff
+bootstrap/install-rvm
+
+# Get relevant files on my machine
+bootstrap/create-user-files-structure
+
+# Set up Vim with preferred settings
+bootstrap/setup-vim
+
+# Lay down environment configuration files
+bootstrap/apply-environments-config
+
+# Tell what manual steps need to be performed
+printf "\n\nMake sure to do the following manual items:\n"
+printf "  * Change that ugly desktop background!\n"
+

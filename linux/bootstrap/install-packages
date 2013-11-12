@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# This script installs all the packages I use for development on a Debian box at FamilySearch
+
+#Function that installs a package, given its name
+function install-package {
+  yes | apt-get install $1
+  if [ $? -ne 0 ]; then
+    echo "Error installing $1"
+    exit
+  fi
+}
+
+#Function that pretty-prints an install header message
+function print-header {
+  printf "\n\n"
+  echo "###############################"
+  echo "# Installing $1"
+  echo "###############################"
+}
+
+#Install Perl
+print-header perl
+install-package perl
+
+#Install Apache2
+print-header apache2
+install-package apache2
+
+#Install Java6 (OpenJDK)
+print-header openjdk-6-jdk
+install-package openjdk-6-jdk
+
+#Install Maven
+print-header maven
+install-package maven
+
+#Install Git
+print-header git
+install-package git
+
+#Install SVN
+print-header svn
+install-package subversion
+
+#Install Ruby
+print-header ruby
+install-package ruby1.9.1
+
+#Install Vim
+print-header vim
+install-package vim
+
+#Install Geany
+print-header geany
+install-package geany
+
+# Install Chromium
+print-header chromium
+install-package chromium-browser
+
+#Install other packages
+print-header "other-development-tools-packages"
+install-package curl
+install-package g++
+install-package libreadline6-dev
+install-pacakge zlib1g-dev
+install-package libssl-dev
+install-package libyaml-dev
+install-package libsqlite3-dev
+install-package sqlite3
+install-package libxml2-dev
+install-package libxslt1-dev
+install-package autoconf
+install-package libgdbm-dev
+install-package libncurses5-dev
+install-package automake
+install-package "make"
+install-package libtool
+install-package bison
+install-package libffi-dev
+install-package libexpat1-dev
+install-package build-essential
+install-package ia32-lib
+install-package terminator

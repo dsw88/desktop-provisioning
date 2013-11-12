@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This script runs the OS updates for all the packages on my system
+#Run updates for Ubuntu
+printf "\n\n"
+echo "###############################"
+echo "# RUNNING UPDATES"
+echo "###############################"
+apt-get update
+yes | apt-get upgrade
+
+if [ $? -ne 0 ]; then
+  echo "Error running updates"
+  exit
+fi

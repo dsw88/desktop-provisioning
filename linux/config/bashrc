@@ -1,0 +1,53 @@
+
+# Set Bash options
+set -o vi # Use Vi mode instead of Emacs mode
+
+# Set up JAVA_HOME, which is used by multiple tools
+export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64"
+
+# Set up Maven environment
+export M2_HOME="/usr/share/maven"
+export M2="$M2_HOME/bin"
+export M2_OPTS="-Xms256m -Xmx512m"
+
+# Add RVM to PATH
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Add my Bash scripts to the PATH
+PATH=$PATH:.:~/environments/linux/scripts
+
+# Configure RVM
+source /home/dsw88/.rvm/scripts/rvm
+
+# Make History file larger
+export HISTSIZE=5000
+export HISTFILESIZE=50000
+
+# Don't put duplicate lines in history
+export HISTCONTROL=ignoredups:ignorespace:erasedups
+
+# Time format for history
+export HISTTIMEFORMAT="%y/%m/%d %T "
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# Set up NVM
+source ~/.nvm/nvm.sh
+
+# Aliases
+alias ll='ls -alF'
+alias la='ls -A'
+
+# Functions
+h() {
+ history | grep $1 
+}
+
+# Source any work-related items that shouldn't go on every machine
+if [ -e ~/.work-bashrc ]
+then
+  source ~/.work-bashrc
+fi
+

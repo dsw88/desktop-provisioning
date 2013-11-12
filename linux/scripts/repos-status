@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd ~/projects
+
+for dir in ./*/
+do
+  echo "Entering directory: $dir"
+  cd $dir
+
+  if [ -d "./.git" ]; then
+    echo "Git repository..."
+    git status
+  elif [ -d "./.svn" ]; then
+    echo "SVN repository..."
+    svn status
+  else
+    echo "Not an SCM repository"
+  fi  
+  printf "Leaving directory: $dir\n\n"  
+  cd ../
+done

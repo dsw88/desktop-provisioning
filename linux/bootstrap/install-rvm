@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This script installs and configures RVM with the correct versions of ruby I want on my box
+printf "\n\n"
+echo "###############################"
+echo "# INSTALL RVM AND CONFIGURE RUBY"
+echo "###############################"
+echo "Nothing is done here yet"
+
+# Install RVM with Ruby
+
+# Move command from .bash_profile to .bashrc
+
+# Install 1.9.3-p286 version of Ruby
+
+# Make 1.9.3 the default version of Ruby
+
+# Add the Ruby Stickler repository to Ruby
