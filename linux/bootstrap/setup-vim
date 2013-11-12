@@ -1,3 +1,33 @@
 #!/bin/bash
 
+ORIG_PATH=$(pwd)
 
+if [ ! -d ~/.vim/bundle ]
+then 
+  mkdir -p ~/.vim/bundle
+fi
+cd ~/.vim/bundle
+
+function install_plugin()
+{
+  if [ -d "$1" ]; then
+    echo "Updating $1"
+    cd $1
+    git checkout HEAD --force
+    git pull
+    cd ..
+  else
+    echo "Installing $1"
+    git clone $2 $1
+  fi
+}
+
+### Install the vim pathogen plugin, which is what loads all other plugins
+install_plugin vim-pathogen https://github.com/tpope/vim-pathogen
+
+### Install other plugins
+install_plugin nerdtree https://github.com/scrooloose/nerdtree
+
+install_plugin xoria256.vim https://github.com/vim-scripts/xoria256.vim
+
+cd $ORIG_PATH

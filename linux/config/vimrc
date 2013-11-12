@@ -1,4 +1,15 @@
 
-execute pathogen#infect()
+" Set up pathogen startup
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
+
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
+
+colorscheme xoria256
+
 syntax on
-filetype plugin indent on
+

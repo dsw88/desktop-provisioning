@@ -1,4 +1,8 @@
 
+if [[ "$TERM" = "xterm" ]]; then
+  TERM=xterm-256color
+fi
+
 # Set Bash options
 set -o vi # Use Vi mode instead of Emacs mode
 
