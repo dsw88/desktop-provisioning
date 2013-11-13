@@ -1,8 +1,14 @@
 #!/bin/bash
 
-# Place bashrc
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+echo "##################################"
+echo "# Copy configuration files"
+echo "##################################"
+
+echo "Copying .bashrc"
 cp ../config/bashrc ~/.bashrc
 
-# Place vimrc
+echo "Copying .vimrc"
 cp ../config/vimrc ~/.vimrc
-

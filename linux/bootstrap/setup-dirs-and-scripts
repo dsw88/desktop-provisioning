@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+echo "###############################"
+echo "# Configure Directories and Scripts"
+echo "###############################"
+echo "Creating Projects and Scripts folder in Home directory"
+test -d ~/projects || mkdir ~/projects
+test -d ~/bin || mkdir ~/bin
+
+echo "Copying scripts to ~/bin directory"
+cp ../scripts/* ~/bin
+printf "\n\n"

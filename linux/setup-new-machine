@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ "$UID" -ne 0 ]; then
+  echo "You must run this script as root"
+  exit
+fi
+
+export PATH=".:$PATH"
+
+# Install and update necessary Debian packages
+bootstrap/update-os-packages
+bootstrap/install-packages
+bootstrap/update-os-packages
+
+# Set up RVM and Ruby stuff
+bootstrap/install-rvm
+
+# Lay down scripts and configs
+configure-environment
+
+# Tell what manual steps need to be performed
+printf "\n\nMake sure to do the following manual items:\n"
+printf "  * Change that ugly desktop background!\n"
+

@@ -1,6 +1,11 @@
 #!/bin/bash
 
-ORIG_PATH=$(pwd)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+echo "###############################"
+echo "# Setting up Vim"
+echo "###############################"
 
 if [ ! -d ~/.vim/bundle ]
 then 
@@ -30,4 +35,4 @@ install_plugin nerdtree https://github.com/scrooloose/nerdtree
 
 install_plugin xoria256.vim https://github.com/vim-scripts/xoria256.vim
 
-cd $ORIG_PATH
+printf "\n\n"
