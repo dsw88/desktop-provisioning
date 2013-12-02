@@ -16,7 +16,7 @@ bootstrap/update-os-packages
 bootstrap/install-rvm
 
 # Lay down scripts and configs
-configure-environment
+su dsw88 configure-environment
 
 # Tell what manual steps need to be performed
 printf "\n\nMake sure to do the following manual items:\n"
