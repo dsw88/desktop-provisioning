@@ -4,7 +4,7 @@
 
 #Function that installs a package, given its name
 function install-package {
-  yes | apt-get install $1
+  apt-get -y install $1
   if [ $? -ne 0 ]; then
     echo "Error installing $1"
     exit
@@ -81,7 +81,6 @@ install-package bison
 install-package libffi-dev
 install-package libexpat1-dev
 install-package build-essential
-install-package ia32-lib
 install-package terminator
 
 printf "\n\n"

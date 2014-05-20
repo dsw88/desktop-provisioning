@@ -9,7 +9,5 @@ filetype on
 filetype indent on
 filetype plugin on
 
-colorscheme xoria256
-
 syntax on
 
