@@ -6,11 +6,11 @@ echo "###############################"
 echo "# RUNNING UPDATES"
 echo "###############################"
 apt-get update
-yes | apt-get upgrade
+apt-get -y upgrade
 
 if [ $? -ne 0 ]; then
   echo "Error running updates"
-  exit
+  exit 1
 fi
 
 printf "\n\n"

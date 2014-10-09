@@ -7,7 +7,7 @@ function install-package {
   apt-get -y install $1
   if [ $? -ne 0 ]; then
     echo "Error installing $1"
-    exit
+    exit 1
   fi
 }
 
@@ -19,17 +19,13 @@ function print-header {
   echo "###############################"
 }
 
-#Install Perl
-print-header perl
-install-package perl
-
 #Install Apache2
 print-header apache2
 install-package apache2
 
-#Install Java6 (OpenJDK)
-print-header openjdk-6-jdk
-install-package openjdk-6-jdk
+#Install Java7 (OpenJDK)
+print-header openjdk-7-jdk
+install-package openjdk-7-jdk
 
 #Install Maven
 print-header maven
@@ -39,10 +35,6 @@ install-package maven
 print-header git
 install-package git
 
-#Install SVN
-print-header svn
-install-package subversion
-
 #Install Ruby
 print-header ruby
 install-package ruby1.9.1
@@ -51,18 +43,9 @@ install-package ruby1.9.1
 print-header vim
 install-package vim
 
-#Install Geany
-print-header geany
-install-package geany
-
-# Install Chromium
-print-header chromium
-install-package chromium-browser
-
 #Install other packages
 print-header "other-development-tools-packages"
 install-package curl
-install-package g++
 install-package libreadline6-dev
 install-pacakge zlib1g-dev
 install-package libssl-dev
